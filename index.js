@@ -11,7 +11,7 @@ async function run () {
     .split(/\n/)
     .filter(branch => !!branch.trim())
     .map(branch => {
-      const [, flag, value, hint] = branch.match(/([* ]) +([^ ]+) +(.+)/)
+      const [, flag, value, hint] = branch.match(/([*+ ]) +([^ ]+) +(.+)/)
       return { value, hint, disabled: flag === '*' }
     })
 
